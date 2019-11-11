@@ -2,15 +2,6 @@
 import 'package:flutter/material.dart';
 
 class MePage extends StatefulWidget {
-//  @override
-//  Widget build(BuildContext context) {
-//    print('HomePage build');
-//    return Container(
-//      child: Center(
-//        child: Text('This is HomePage'),
-//      ),
-//    );
-//  }
 
   @override
   State<StatefulWidget> createState() {

@@ -29,12 +29,12 @@ class MainViewState extends State<MainView>
 
   final bodyList = [HomePage(), MePage()];
 
-  final pageController = PageController();
+  final _pageController = PageController();
 
   int currentIndex = 0;
 
   void onTap(int index) {
-    pageController.jumpToPage(index);
+    _pageController.jumpToPage(index);
   }
 
   void onPageChanged(int index) {
@@ -44,13 +44,19 @@ class MainViewState extends State<MainView>
   }
 
   @override
+  void dispose(){
+    super.dispose();
+    _pageController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         bottomNavigationBar: BottomNavigationBar(
             items: items, currentIndex: currentIndex, onTap: onTap),
         // body: bodyList[currentIndex],
         body: PageView(
-          controller: pageController,
+          controller: _pageController,
           onPageChanged: onPageChanged,
           children: bodyList,
           physics: NeverScrollableScrollPhysics(), // 禁止滑动

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/danny.jiang/AndroidStudioProjects/flutter_dir/flutter_tech/flutter_tech/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/Users/danny.jiang/Downloads/from_github/FlutterCourse/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
-                    "source": "/Users/danny.jiang/AndroidStudioProjects/flutter_dir/flutter_tech/flutter_tech/android/app/src/main/res/values/styles.xml",
+                    "source": "/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
