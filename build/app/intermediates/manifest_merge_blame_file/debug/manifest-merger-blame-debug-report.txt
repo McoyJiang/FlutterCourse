@@ -1,0 +1,74 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.dannyjiang.flutter_tech"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="16"
+9        android:targetSdkVersion="28" />
+10    <!--
+11         Flutter needs it to communicate with the running application
+12         to allow setting breakpoints, to provide hot reload, etc.
+13    -->
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->/Users/danny.jiang/AndroidStudioProjects/flutter_dir/flutter_tech/flutter_tech/android/app/src/debug/AndroidManifest.xml:6:5-66
+14-->/Users/danny.jiang/AndroidStudioProjects/flutter_dir/flutter_tech/flutter_tech/android/app/src/debug/AndroidManifest.xml:6:22-64
+15    <!--
+16     io.flutter.app.FlutterApplication is an android.app.Application that
+17         calls FlutterMain.startInitialization(this); in its onCreate method.
+18         In most cases you can leave this as-is, but you if you want to provide
+19         additional functionality it is fine to subclass or reimplement
+20         FlutterApplication and put your custom class here.
+21    -->
+22    <application
+22-->/Users/danny.jiang/AndroidStudioProjects/flutter_dir/flutter_tech/flutter_tech/android/app/src/main/AndroidManifest.xml:9:5-32:19
+23        android:name="io.flutter.app.FlutterApplication"
+23-->/Users/danny.jiang/AndroidStudioProjects/flutter_dir/flutter_tech/flutter_tech/android/app/src/main/AndroidManifest.xml:10:9-57
+24        android:debuggable="true"
+25        android:icon="@mipmap/ic_launcher"
+25-->/Users/danny.jiang/AndroidStudioProjects/flutter_dir/flutter_tech/flutter_tech/android/app/src/main/AndroidManifest.xml:12:9-43
+26        android:label="flutter_tech" >
+26-->/Users/danny.jiang/AndroidStudioProjects/flutter_dir/flutter_tech/flutter_tech/android/app/src/main/AndroidManifest.xml:11:9-37
+27        <activity
+27-->/Users/danny.jiang/AndroidStudioProjects/flutter_dir/flutter_tech/flutter_tech/android/app/src/main/AndroidManifest.xml:13:9-31:20
+28            android:name="com.dannyjiang.flutter_tech.MainActivity"
+28-->/Users/danny.jiang/AndroidStudioProjects/flutter_dir/flutter_tech/flutter_tech/android/app/src/main/AndroidManifest.xml:14:13-41
+29            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+29-->/Users/danny.jiang/AndroidStudioProjects/flutter_dir/flutter_tech/flutter_tech/android/app/src/main/AndroidManifest.xml:17:13-144
+30            android:hardwareAccelerated="true"
+30-->/Users/danny.jiang/AndroidStudioProjects/flutter_dir/flutter_tech/flutter_tech/android/app/src/main/AndroidManifest.xml:18:13-47
+31            android:launchMode="singleTop"
+31-->/Users/danny.jiang/AndroidStudioProjects/flutter_dir/flutter_tech/flutter_tech/android/app/src/main/AndroidManifest.xml:15:13-43
+32            android:theme="@style/LaunchTheme"
+32-->/Users/danny.jiang/AndroidStudioProjects/flutter_dir/flutter_tech/flutter_tech/android/app/src/main/AndroidManifest.xml:16:13-47
+33            android:windowSoftInputMode="adjustResize" >
+33-->/Users/danny.jiang/AndroidStudioProjects/flutter_dir/flutter_tech/flutter_tech/android/app/src/main/AndroidManifest.xml:19:13-55
+34
+35            <!--
+36                 This keeps the window background of the activity showing
+37                 until Flutter renders its first frame. It can be removed if
+38                 there is no splash screen (such as the default splash screen
+39                 defined in @style/LaunchTheme).
+40            -->
+41            <meta-data
+41-->/Users/danny.jiang/AndroidStudioProjects/flutter_dir/flutter_tech/flutter_tech/android/app/src/main/AndroidManifest.xml:24:13-26:40
+42                android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
+42-->/Users/danny.jiang/AndroidStudioProjects/flutter_dir/flutter_tech/flutter_tech/android/app/src/main/AndroidManifest.xml:25:17-82
+43                android:value="true" />
+43-->/Users/danny.jiang/AndroidStudioProjects/flutter_dir/flutter_tech/flutter_tech/android/app/src/main/AndroidManifest.xml:26:17-37
+44
+45            <intent-filter>
+45-->/Users/danny.jiang/AndroidStudioProjects/flutter_dir/flutter_tech/flutter_tech/android/app/src/main/AndroidManifest.xml:27:13-30:29
+46                <action android:name="android.intent.action.MAIN" />
+46-->/Users/danny.jiang/AndroidStudioProjects/flutter_dir/flutter_tech/flutter_tech/android/app/src/main/AndroidManifest.xml:28:17-68
+46-->/Users/danny.jiang/AndroidStudioProjects/flutter_dir/flutter_tech/flutter_tech/android/app/src/main/AndroidManifest.xml:28:25-66
+47
+48                <category android:name="android.intent.category.LAUNCHER" />
+48-->/Users/danny.jiang/AndroidStudioProjects/flutter_dir/flutter_tech/flutter_tech/android/app/src/main/AndroidManifest.xml:29:17-76
+48-->/Users/danny.jiang/AndroidStudioProjects/flutter_dir/flutter_tech/flutter_tech/android/app/src/main/AndroidManifest.xml:29:27-74
+49            </intent-filter>
+50        </activity>
+51    </application>
+52
+53</manifest>
