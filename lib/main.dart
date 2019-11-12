@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tech/pages/FuliPage.dart';
 import 'package:flutter_tech/pages/HomePage.dart';
 import 'package:flutter_tech/pages/MePage.dart';
 
@@ -24,10 +25,11 @@ class MainViewState extends State<MainView>
     with SingleTickerProviderStateMixin {
   final items = [
     BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('首页')),
+    BottomNavigationBarItem(icon: Icon(Icons.category), title: Text('福利')),
     BottomNavigationBarItem(icon: Icon(Icons.person), title: Text('我的'))
   ];
 
-  final bodyList = [HomePage(), MePage()];
+  final bodyList = [HomePage(), FuliPage(), MePage()];
 
   final _pageController = PageController();
 
