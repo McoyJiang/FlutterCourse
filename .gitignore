@@ -1,1 +1,5 @@
 .idea/libraries/Dart_Packages.xml
+.idea/workspace.xml
+build/*
+build/app/intermediates/flutter/debug/*
+build/app/intermediates/flutter/debug/libs.jar
