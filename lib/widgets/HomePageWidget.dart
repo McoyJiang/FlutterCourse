@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tech/bean/HomPageBean.dart';
 import 'package:flutter_tech/bloc/JapaneseTvBloc.dart';
+import 'package:flutter_tech/widgets/HomePageListItem.dart';
+import 'package:flutter_tech/widgets/ItemList.dart';
 
 class HomePageWidget extends StatefulWidget {
   @override
@@ -59,25 +61,30 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   Widget _buildUserWidget(HomePageBeanResponse data) {
     _entityList.clear();
     _entityList.addAll(data.entityList);
-    return ListView.builder(
-      itemCount: _entityList.length,
-      scrollDirection: Axis.vertical,
-      physics: ClampingScrollPhysics(),
-      itemBuilder: buildList,
-    );
+    return _gridView();
+//    return ListView.builder(
+//      itemCount: _entityList.length,
+//      scrollDirection: Axis.vertical,
+//      physics: ClampingScrollPhysics(),
+//      itemBuilder: buildList,
+//    );
   }
 
   Widget buildList(BuildContext context, int index) {
     HomeListEntity entry = _entityList[index];
-    return Card(
-        color: Colors.white,
-        child: Center(
-            child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-              Image.network(entry.img),
-              Text(entry.title),
-            ])));
+    return HomePageListItem(entry);
+  }
+
+  Widget _gridView() {
+    return GridView.count(
+      crossAxisCount: 2,
+      padding: EdgeInsets.all(4.0),
+      childAspectRatio: 8.0 / 9.0,
+      children: _entityList
+          .map(
+            (Item) => ItemList(item: Item),
+      )
+          .toList(),
+    );
   }
 }
