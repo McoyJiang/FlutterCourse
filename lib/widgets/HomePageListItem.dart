@@ -1,113 +1,61 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tech/bean/HomPageBean.dart';
 
-class HomePageListItem extends StatelessWidget{
+class HomePageListItem extends StatelessWidget {
+  final HomeListEntity _entry;
 
-  final HomeListEntity entry;
-
-  HomePageListItem(this.entry);
+  HomePageListItem(this._entry);
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 20,
-      child: InkWell(
-        onTap: () => print('HomePageListItem clicked'),
-        child: Column(
-          children: <Widget>[
-            Hero(
-              child: FadeInImage.assetNetwork(
-                placeholder: "assets/placeholder.jpg",
-                image: entry.img,
-                fit: BoxFit.cover,
-                width: double.infinity,
-                height: 400.0,
-                fadeInDuration: Duration(milliseconds: 50),
-              ),
-              tag: "Movie-Tag-${entry.id}",
-            ),
-            _getTitleSection(context),
-          ],
-        ),
-      ),
-
-    );
-  }
-
-  Widget _getTitleSection(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(12.0),
-      child: Row(
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  child: Text(
-                    entry.title,
-                    style: Theme
-                        .of(context)
-                        .textTheme
-                        .subhead
-                        .copyWith(fontWeight: FontWeight.bold),
-                  ),
-                ),
-                Container(
-                  padding: const EdgeInsets.only(top: 4.0),
-                  child: Text(entry.zhuti,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context).textTheme.body1,
-                  ),
-                )
-              ],
-            ),
-          ),
-          Container(
-            width: 12.0,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
+    return new GridTile(
+      child: new Card(
+          elevation: 1.0,
+          shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(14.0))),
+          child: new Column(
+            mainAxisSize: MainAxisSize.max,
             children: <Widget>[
-              Row(
-                children: <Widget>[
-                  Text(
-                    "",
-                    style: Theme.of(context).textTheme.body1,
+              new Expanded(
+                flex: 3,
+                child: Hero(
+                  child: new ClipRRect(
+                    borderRadius: BorderRadius.circular(14.0),
+                    child: new FadeInImage.assetNetwork(
+                      placeholder: "assets/placeholder.jpg",
+                      image: _entry.img,
+                      fit: BoxFit.cover,
+                      width: double.infinity,
+                      height: 300.0,
+                      fadeInDuration: Duration(milliseconds: 50),
+                    ),
                   ),
-                  Container(
-                    width: 4.0,
-                  ),
-                  Icon(
-                    Icons.star,
-                    size: 16.0,
-                  )
-                ],
+                  tag: "Movie-Tag-${_entry.id}",
+                ),
               ),
               Container(
-                height: 4.0,
+                height: 6.0,
               ),
-              Row(
-                children: <Widget>[
-                  Text(
-                    "",
-                    style: Theme.of(context).textTheme.body1,
-                  ),
-                  Container(
-                    width: 4.0,
-                  ),
-                  Icon(
-                    Icons.date_range,
-                    size: 16.0,
-                  )
-                ],
-              )
+              new Expanded(
+                  flex: 1,
+                  child: new Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      new Text(
+                        _entry.title,
+                        overflow: TextOverflow.ellipsis,
+                        style: Theme.of(context)
+                            .textTheme
+                            .subhead
+                            .copyWith(fontWeight: FontWeight.bold),
+                      ),
+                      new Text('更新至 ${_entry.zhuti}'),
+                    ],
+                  )),
             ],
-          )
-        ],
-      ),
+          )),
     );
   }
-
 }

@@ -3,7 +3,10 @@ import 'package:flutter_tech/pages/FuliPage.dart';
 import 'package:flutter_tech/pages/HomePage.dart';
 import 'package:flutter_tech/pages/MePage.dart';
 
-void main() => runApp(App());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(App());
+}
 
 class App extends StatelessWidget {
   @override
@@ -54,6 +57,9 @@ class MainViewState extends State<MainView>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text("Flutter Course"),
+        ),
         bottomNavigationBar: BottomNavigationBar(
             items: items, currentIndex: currentIndex, onTap: onTap),
         // body: bodyList[currentIndex],
