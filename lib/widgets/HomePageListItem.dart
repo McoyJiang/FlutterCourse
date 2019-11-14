@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tech/bean/HomPageBean.dart';
+import 'package:flutter_tech/utils/navigator.dart';
+import 'package:flutter_tech/widgets/Demo.dart';
 
 class HomePageListItem extends StatelessWidget {
   final HomeListEntity _entry;
@@ -13,7 +15,9 @@ class HomePageListItem extends StatelessWidget {
           elevation: 1.0,
           shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(14.0))),
-          child: new Column(
+          child: new InkWell(
+            onTap: () => goToMediaDetails(context, _entry),
+              child: new Column(
             mainAxisSize: MainAxisSize.max,
             children: <Widget>[
               new Expanded(
@@ -55,7 +59,11 @@ class HomePageListItem extends StatelessWidget {
                     ],
                   )),
             ],
-          )),
+          ))),
     );
   }
+
+//  goToMediaDetails(BuildContext context, HomeListEntity entry) {
+//    Navigator.of(context).push(MaterialPageRoute(builder: (context) => Demo()));
+//  }
 }
