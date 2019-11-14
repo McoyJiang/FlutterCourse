@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tech/pages/FuliPage.dart';
 import 'package:flutter_tech/pages/HomePage.dart';
 import 'package:flutter_tech/pages/MePage.dart';
+import 'package:flutter_tech/widgets/home_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,7 +33,7 @@ class MainViewState extends State<MainView>
     BottomNavigationBarItem(icon: Icon(Icons.person), title: Text('我的'))
   ];
 
-  final bodyList = [HomePage(), FuliPage(), MePage()];
+  final bodyList = [home_page(), FuliPage(), MePage()];
 
   final _pageController = PageController();
 
@@ -57,9 +58,6 @@ class MainViewState extends State<MainView>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Flutter Course"),
-        ),
         bottomNavigationBar: BottomNavigationBar(
             items: items, currentIndex: currentIndex, onTap: onTap),
         // body: bodyList[currentIndex],
