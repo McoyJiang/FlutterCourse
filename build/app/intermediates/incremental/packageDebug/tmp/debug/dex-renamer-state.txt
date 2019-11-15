@@ -1,4 +1,4 @@
-#Thu Nov 14 15:05:40 CST 2019
+#Fri Nov 15 09:57:58 CST 2019
 base.0=/Users/danny.jiang/Downloads/from_github/FlutterCourse/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

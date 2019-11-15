@@ -1,35 +1,47 @@
+import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_tech/widgets/basic_widget.dart';
 import 'package:flutter_tech/widgets/home_hj_page.dart';
 import 'package:flutter_tech/widgets/home_mj_page.dart';
 import 'package:flutter_tech/widgets/home_rj_page.dart';
 
-class home_page extends StatefulWidget{
+class home_page extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return _home_page_state();
   }
 }
 
-class _home_page_state extends State<home_page> with AutomaticKeepAliveClientMixin{
-
+class _home_page_state extends State<home_page>
+    with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
     super.build(context);
     return DefaultTabController(
       length: 3,
       child: Scaffold(
+        backgroundColor: Colors.white10,
         body: DefaultTabController(
           length: 3,
           child: Scaffold(
             appBar: AppBar(
-              bottom: TabBar(
-                tabs: [
-                  Tab(icon: Icon(Icons.directions_car)),
-                  Tab(icon: Icon(Icons.directions_transit)),
-                  Tab(icon: Icon(Icons.directions_bike)),
-                ],
+              flexibleSpace: SafeArea(
+                child: Scaffold(
+                  backgroundColor: Colors.lightBlueAccent,
+                  body: Column(
+                    children: <Widget>[
+                      Container(
+                        height: 10,
+                        alignment: Alignment.center,
+                        color: Colors.lightBlueAccent,
+                      ),
+                      getTabBar(),
+                    ],
+                  ),
+                ),
               ),
-              title: Text('Tabs Demo'),
+              bottom: MyDivider(height: 10.0, color: Colors.white,),
+              backgroundColor: Colors.lightBlueAccent,
             ),
             body: TabBarView(
               children: [
@@ -44,7 +56,30 @@ class _home_page_state extends State<home_page> with AutomaticKeepAliveClientMix
     );
   }
 
+  getTabBar() {
+    return new TabBar(
+      indicatorSize: TabBarIndicatorSize.tab,
+      indicator: new BubbleTabIndicator(
+        indicatorHeight: 30.0,
+        indicatorColor: Colors.white,
+        padding: EdgeInsets.fromLTRB(-20, 0, -20, 0),
+        insets: EdgeInsets.fromLTRB(-20, 0, -20, 0),
+        tabBarIndicatorSize: TabBarIndicatorSize.label,
+      ),
+      tabs: [
+        Tab(
+            child: Text('日剧',
+                style: new TextStyle(color: Colors.blueAccent, fontSize: 20))),
+        Tab(
+            child: Text('美剧',
+                style: new TextStyle(color: Colors.blueAccent, fontSize: 20))),
+        Tab(
+            child: Text('韩剧',
+                style: new TextStyle(color: Colors.blueAccent, fontSize: 20)))
+      ],
+    );
+  }
+
   @override
   bool get wantKeepAlive => true;
-
 }

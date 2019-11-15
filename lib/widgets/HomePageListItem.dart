@@ -12,6 +12,7 @@ class HomePageListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return new GridTile(
       child: new Card(
+        color: Colors.white70,
           elevation: 1.0,
           shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(14.0))),
