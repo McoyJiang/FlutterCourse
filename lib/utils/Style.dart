@@ -22,4 +22,8 @@ class Style {
       fontSize: 20.0,
       fontWeight: FontWeight.w400
   );
+
+  static final subHeaderTextStyle = commonTextStyle.copyWith(
+      fontSize: 12.0
+  );
 }

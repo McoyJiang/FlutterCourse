@@ -12,8 +12,8 @@ class HeroBanner extends StatelessWidget {
       tag: "Movie-Tag-$_id",
       child: FadeInImage.assetNetwork(
           fit: BoxFit.cover,
-          width: double.infinity,
-          height: 280,
+          width: 150,
+          height: 150,
           placeholder: "assets/placeholder.jpg",
           image: _bannerUrl),
     );

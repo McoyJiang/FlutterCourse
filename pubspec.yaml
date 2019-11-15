@@ -48,6 +48,21 @@ flutter:
 
   assets:
     - assets/placeholder.jpg
+    - assets/img/mars.png
+    - assets/img/neptune.png
+    - assets/img/moon.png
+    - assets/img/earth.png
+    - assets/img/mercury.png
+    - assets/img/ic_distance.png
+    - assets/img/ic_gravity.png
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins-Regular.ttf
+          weight: 400
   # To add assets to your application, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg
