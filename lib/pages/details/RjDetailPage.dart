@@ -75,7 +75,7 @@ class _RjDetailPageState extends State<RjDetailPage> with AutomaticKeepAliveClie
     return Scaffold(
         backgroundColor: Colors.grey,
         body: ListView(
-          padding: EdgeInsets.all(10),
+          padding: EdgeInsets.all(0),
           children: <Widget>[
             _buildDetailBanner(data),
             _buildPlays(data),
