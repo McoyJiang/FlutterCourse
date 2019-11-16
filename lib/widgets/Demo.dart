@@ -5,6 +5,7 @@ import 'package:flutter_tech/bloc/RjDetailBloc.dart';
 import 'package:flutter_tech/utils/Style.dart';
 import 'package:flutter_tech/utils/navigator.dart';
 import 'package:flutter_tech/widgets/HeroBanner.dart';
+import 'package:flutter_tech/widgets/WrapWidget.dart';
 
 class Demo extends StatefulWidget {
   final HomeListEntity _entity;
@@ -74,7 +75,8 @@ class _DemoState extends State<Demo> with AutomaticKeepAliveClientMixin {
   Widget getDetailsWidget(MediaDetailsResponse data) {
     return Scaffold(
         backgroundColor: Colors.grey,
-        body: Column(
+        body: ListView(
+          padding: EdgeInsets.all(10),
           children: <Widget>[
             _buildDetailBanner(data),
             _buildPlays(data),
@@ -84,36 +86,7 @@ class _DemoState extends State<Demo> with AutomaticKeepAliveClientMixin {
 
   Widget _buildPlays(MediaDetailsResponse data) {
     List<MediaSeriesListItem> _series = data.seriesList;
-    return new Flexible(
-        child: new GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 4, //一行几个
-          mainAxisSpacing: 10.0, //Y轴间距
-          crossAxisSpacing: 7.0, //X轴间距
-          childAspectRatio: 0.7),
-      itemCount: _series.length,
-      itemBuilder: (context, index) {
-        return RaisedButton(
-          onPressed: () {},
-          textColor: Colors.white,
-          padding: const EdgeInsets.all(0.0),
-          child: Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: <Color>[
-                  Color(0xFF0D47A1),
-                  Color(0xFF1976D2),
-                  Color(0xFF42A5F5),
-                ],
-              ),
-            ),
-            padding: const EdgeInsets.all(10.0),
-            child:
-                const Text('Gradient Button', style: TextStyle(fontSize: 20)),
-          ),
-        );
-      },
-    ));
+    return new WrapWidget(_series);
   }
 
   Widget _buildDetailBanner(MediaDetailsResponse data) {
@@ -135,18 +108,10 @@ class _DemoState extends State<Demo> with AutomaticKeepAliveClientMixin {
           new Container(height: 24.0),
           new Text(
             data.title,
-            style: Style.titleTextStyle.copyWith(fontSize: 30),
+            style: Style.headerTextStyle,
           ),
           new Container(height: 10.0),
           new Text('主演: ${data.zhuyan}', style: Style.subHeaderTextStyle),
-          new Container(
-              margin: new EdgeInsets.symmetric(vertical: 8.0),
-              height: 2.0,
-              width: 18.0,
-              color: new Color(0xff00c6ff)),
-          new Container(height: 20.0),
-          new Text('更新至: ${widget._entity.zhuti}',
-              style: Style.subHeaderTextStyle.copyWith(fontSize: 18))
         ],
       ),
       padding: EdgeInsets.fromLTRB(100, 40, 0, 0),
@@ -179,5 +144,37 @@ class _DemoState extends State<Demo> with AutomaticKeepAliveClientMixin {
         ],
       ),
     );
+  }
+}
+
+class TestFlowDelegate extends FlowDelegate {
+  EdgeInsets margin = EdgeInsets.zero;
+
+  TestFlowDelegate({this.margin});
+  @override
+  void paintChildren(FlowPaintingContext context) {
+    var x = margin.left;
+    var y = margin.top;
+    for (int i = 0; i < context.childCount; i++) {
+      var w = context.getChildSize(i).width + x + margin.right;
+      if (w < context.size.width) {
+        context.paintChild(i,
+            transform: new Matrix4.translationValues(
+                x, y, 0.0));
+        x = w + margin.left;
+      } else {
+        x = margin.left;
+        y += context.getChildSize(i).height + margin.top + margin.bottom;
+        context.paintChild(i,
+            transform: new Matrix4.translationValues(
+                x, y, 0.0));
+        x += context.getChildSize(i).width + margin.left + margin.right;
+      }
+    }
+  }
+
+  @override
+  bool shouldRepaint(FlowDelegate oldDelegate) {
+    return oldDelegate != this;
   }
 }
