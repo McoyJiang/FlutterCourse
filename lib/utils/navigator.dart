@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tech/bean/HomPageBean.dart';
-import 'package:flutter_tech/pages/details/RjDetailPage.dart';
+import 'package:flutter_tech/bean/MediaDetailsBean.dart';
+import 'package:flutter_tech/pages/VideoScreen.dart';
 import 'package:flutter_tech/widgets/Demo.dart';
 
 goToMediaDetails(BuildContext context, HomeListEntity _entry) {
   _pushWidgetWithFade(context, Demo(_entry));
+}
+
+goToVideoScreen(BuildContext context, MediaSeriesListItem _item) {
+  _pushWidgetWithFade(context, VideoScreen(_item));
 }
 
 _pushWidgetWithFade(BuildContext context, Widget widget) {
