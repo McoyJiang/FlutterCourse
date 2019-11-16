@@ -22,19 +22,25 @@ class _VideoScreenState extends State<VideoScreen> with AutomaticKeepAliveClient
         'http://okxzy.xzokzyzy.com/20191103/8912_19507cae/%E6%88%91%E7%9A%84%E4%BA%8B%E8%AF%B4%E6%9D%A5%E8%AF%9D%E9%95%BF04.mp4'),
     aspectRatio: 3 / 2,
     autoPlay: true,
-    looping: true,
+    looping: false,
   );
 
   @override
   Widget build(BuildContext context) {
     super.build(context);
-
     final playerWidget = Chewie(
       controller: chewieController,
     );
 
-    //return Text('this is VideoScreen');
-    return playerWidget;
+    return new Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: <Widget>[
+        new Container(height: 30,),
+        playerWidget,
+        Text('jianjie'),
+      ],
+    );
   }
 
   @override
