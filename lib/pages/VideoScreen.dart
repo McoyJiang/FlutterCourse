@@ -23,6 +23,6 @@ class _VideoScreenState extends State<VideoScreen> with AutomaticKeepAliveClient
   }
 
   @override
-  bool get wantKeepAlive => null;
+  bool get wantKeepAlive => true;
 
 }
