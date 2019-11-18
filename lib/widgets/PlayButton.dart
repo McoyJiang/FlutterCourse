@@ -30,7 +30,7 @@ class PlayButton extends StatelessWidget {
           elevation: 2.0,
           radius: 10.0,
           text: "${_response.seriesList[index].zhuti}",
-          background: Colors.lightBlue,
+          background: Colors.orangeAccent,
           onPressed: () => goToVideoScreen(context, _response, _response.seriesList[index]),
         );
       });

@@ -12,8 +12,8 @@
 12         to allow setting breakpoints, to provide hot reload, etc.
 13    -->
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/debug/AndroidManifest.xml:6:5-66
-14-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/debug/AndroidManifest.xml:6:22-64
+14-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:4:5-67
+14-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:4:22-64
 15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 15-->[com.google.android.exoplayer:exoplayer-core:2.9.6] /Users/danny.jiang/.gradle/caches/transforms-2/files-2.1/b84720b6d6857a46483e8be434a4d3ea/exoplayer-core-2.9.6/AndroidManifest.xml:24:5-79
 15-->[com.google.android.exoplayer:exoplayer-core:2.9.6] /Users/danny.jiang/.gradle/caches/transforms-2/files-2.1/b84720b6d6857a46483e8be434a4d3ea/exoplayer-core-2.9.6/AndroidManifest.xml:24:22-76
@@ -25,53 +25,55 @@
 21         FlutterApplication and put your custom class here.
 22    -->
 23    <application
-23-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:9:5-32:19
+23-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:11:5-34:19
 24        android:name="io.flutter.app.FlutterApplication"
-24-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:10:9-57
-25        android:debuggable="true"
-26        android:icon="@mipmap/ic_launcher"
-26-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:12:9-43
-27        android:label="flutter_tech" >
-27-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:11:9-37
-28        <activity
-28-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:13:9-31:20
-29            android:name="com.dannyjiang.flutter_tech.MainActivity"
-29-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:14:13-41
-30            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-30-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:17:13-144
-31            android:hardwareAccelerated="true"
-31-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:18:13-47
-32            android:launchMode="singleTop"
-32-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:15:13-43
-33            android:theme="@style/LaunchTheme"
-33-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:16:13-47
-34            android:windowSoftInputMode="adjustResize" >
-34-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:19:13-55
-35
-36            <!--
-37                 This keeps the window background of the activity showing
-38                 until Flutter renders its first frame. It can be removed if
-39                 there is no splash screen (such as the default splash screen
-40                 defined in @style/LaunchTheme).
-41            -->
-42            <meta-data
-42-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:24:13-26:40
-43                android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
-43-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:25:17-82
-44                android:value="true" />
-44-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:26:17-37
-45
-46            <intent-filter>
-46-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:27:13-30:29
-47                <action android:name="android.intent.action.MAIN" />
-47-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:28:17-68
-47-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:28:25-66
-48
-49                <category android:name="android.intent.category.LAUNCHER" />
-49-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:29:17-76
-49-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:29:27-74
-50            </intent-filter>
-51        </activity>
-52    </application>
-53
-54</manifest>
+24-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:12:9-57
+25        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
+25-->[com.android.support:support-compat:28.0.0] /Users/danny.jiang/.gradle/caches/transforms-2/files-2.1/eac699f134901d0d2fa5c1a81ade99d0/support-compat-28.0.0/AndroidManifest.xml:22:18-91
+26        android:debuggable="true"
+27        android:icon="@mipmap/ic_launcher"
+27-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:14:9-43
+28        android:label="flutter_tech" >
+28-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:13:9-37
+29        <activity
+29-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:15:9-33:20
+30            android:name="com.dannyjiang.flutter_tech.MainActivity"
+30-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:16:13-41
+31            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+31-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:19:13-144
+32            android:hardwareAccelerated="true"
+32-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:20:13-47
+33            android:launchMode="singleTop"
+33-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:17:13-43
+34            android:theme="@style/LaunchTheme"
+34-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:18:13-47
+35            android:windowSoftInputMode="adjustResize" >
+35-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:21:13-55
+36
+37            <!--
+38                 This keeps the window background of the activity showing
+39                 until Flutter renders its first frame. It can be removed if
+40                 there is no splash screen (such as the default splash screen
+41                 defined in @style/LaunchTheme).
+42            -->
+43            <meta-data
+43-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:26:13-28:40
+44                android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
+44-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:27:17-82
+45                android:value="true" />
+45-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:28:17-37
+46
+47            <intent-filter>
+47-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:29:13-32:29
+48                <action android:name="android.intent.action.MAIN" />
+48-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:30:17-68
+48-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:30:25-66
+49
+50                <category android:name="android.intent.category.LAUNCHER" />
+50-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:31:17-76
+50-->/Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/src/main/AndroidManifest.xml:31:27-74
+51            </intent-filter>
+52        </activity>
+53    </application>
+54
+55</manifest>

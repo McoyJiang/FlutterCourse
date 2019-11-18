@@ -144,6 +144,7 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Android API 29 Platform" project-jdk-type="Android SDK" />
   <component name="ProjectType">
     <option name="id" value="io.flutter" />
   </component>

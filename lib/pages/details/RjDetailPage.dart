@@ -3,8 +3,10 @@ import 'package:flutter_tech/bean/HomPageBean.dart';
 import 'package:flutter_tech/bean/MediaDetailsBean.dart';
 import 'package:flutter_tech/bloc/RjDetailBloc.dart';
 import 'package:flutter_tech/utils/Style.dart';
+import 'package:flutter_tech/widgets/FavoriteIcon.dart';
 import 'package:flutter_tech/widgets/HeroBanner.dart';
 import 'package:flutter_tech/widgets/PlayButton.dart';
+import 'package:nice_button/NiceButton.dart';
 
 class RjDetailPage extends StatefulWidget {
   final HomeListEntity _entity;
@@ -78,19 +80,23 @@ class _RjDetailPageState extends State<RjDetailPage> with AutomaticKeepAliveClie
           padding: EdgeInsets.all(0),
           children: <Widget>[
             _buildDetailBanner(data),
+            Container(height: 30,),
             _buildPlays(data),
           ],
         ));
   }
 
   Widget _buildPlays(MediaDetailsResponse data) {
-    List<MediaSeriesListItem> _series = data.seriesList;
     return new PlayButton(data);
+  }
+
+  void _handleTapboxChanged(bool newValue) {
+    print('newValue is $newValue');
   }
 
   Widget _buildDetailBanner(MediaDetailsResponse data) {
     final bannerThumbnail = new Container(
-      margin: new EdgeInsets.symmetric(vertical: 16.0),
+      margin: new EdgeInsets.fromLTRB(16.0, 0, 0, 0),
       alignment: FractionalOffset.centerLeft,
       child: new ClipRRect(
         borderRadius: BorderRadius.circular(14.0),
@@ -103,22 +109,48 @@ class _RjDetailPageState extends State<RjDetailPage> with AutomaticKeepAliveClie
       constraints: new BoxConstraints.expand(),
       child: new Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          new Container(height: 24.0),
+          new Container(height: 24,),
           new Text(
             data.title,
             style: Style.headerTextStyle,
           ),
+
           new Container(height: 10.0),
           new Text('主演: ${data.zhuyan}', style: Style.subHeaderTextStyle),
+
+          new Container(
+            height: 40,
+          ),
+          new Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              NiceButton(
+                text:'下载',
+                width: 60,
+                radius: 10.0,
+                fontSize: 20,
+                background: Colors.lightBlue,
+                padding: EdgeInsets.fromLTRB(0, 3, 0, 3),
+              ),
+              Container(width: 20,),
+              FavoriteIcon(
+                iconSize: 30,
+                onChanged: _handleTapboxChanged,
+              )
+            ],
+          )
         ],
       ),
-      padding: EdgeInsets.fromLTRB(100, 40, 0, 0),
-      margin: new EdgeInsets.fromLTRB(76.0, 16.0, 16.0, 16.0),
+      padding: EdgeInsets.fromLTRB(160, 40, 0, 0),
+      margin: new EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
       decoration: new BoxDecoration(
         color: new Color(0xFF333366),
         shape: BoxShape.rectangle,
-        borderRadius: new BorderRadius.circular(8.0),
+        borderRadius: new BorderRadius.circular(14.0),
         boxShadow: <BoxShadow>[
           new BoxShadow(
             color: Colors.black12,
@@ -130,12 +162,12 @@ class _RjDetailPageState extends State<RjDetailPage> with AutomaticKeepAliveClie
     );
 
     return new Container(
-      height: 280,
+      height: 300,
       margin: const EdgeInsets.symmetric(
         vertical: 10.0,
         horizontal: 5.0,
       ),
-      color: Colors.white70,
+      //color: Colors.white70,
       child: new Stack(
         children: <Widget>[
           bannerCard,
