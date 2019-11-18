@@ -85,7 +85,7 @@ class _RjDetailPageState extends State<RjDetailPage> with AutomaticKeepAliveClie
 
   Widget _buildPlays(MediaDetailsResponse data) {
     List<MediaSeriesListItem> _series = data.seriesList;
-    return new PlayButton(_series);
+    return new PlayButton(data);
   }
 
   Widget _buildDetailBanner(MediaDetailsResponse data) {

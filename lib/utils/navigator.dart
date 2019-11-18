@@ -3,13 +3,19 @@ import 'package:flutter_tech/bean/HomPageBean.dart';
 import 'package:flutter_tech/bean/MediaDetailsBean.dart';
 import 'package:flutter_tech/pages/VideoScreen.dart';
 import 'package:flutter_tech/pages/details/RjDetailPage.dart';
+import 'package:flutter_tech/widgets/Demo.dart';
 
 goToMediaDetails(BuildContext context, HomeListEntity _entry) {
   _pushWidgetWithFade(context, RjDetailPage(_entry));
 }
 
-goToVideoScreen(BuildContext context, MediaSeriesListItem _item) {
-  _pushWidgetWithFade(context, VideoScreen(_item));
+goToVideoScreen(BuildContext context, MediaDetailsResponse _response,
+    MediaSeriesListItem _item) {
+  //_pushWidgetWithFade(context, VideoScreen(_response, _item));
+//  _pushWidgetWithFade(context, Demo());
+  Navigator.push(context, MaterialPageRoute(builder: (context) {
+    return VideoScreen(_response, _item);
+  }));
 }
 
 _pushWidgetWithFade(BuildContext context, Widget widget) {

@@ -7,9 +7,9 @@ import 'package:nice_button/NiceButton.dart';
 * 可以让子控件自动换行的控件
 * */
 class PlayButton extends StatelessWidget {
-  final List<MediaSeriesListItem> _series;
+  final MediaDetailsResponse _response;
 
-  PlayButton(this._series);
+  PlayButton(this._response);
 
   @override
   Widget build(BuildContext context) {
@@ -23,15 +23,15 @@ class PlayButton extends StatelessWidget {
 
   /*一个渐变颜色的正方形集合*/
   List<Widget> Boxs(BuildContext context) =>
-      List.generate(_series.length, (index) {
+      List.generate(_response.seriesList.length, (index) {
         return NiceButton(
           padding: EdgeInsets.fromLTRB(0, 5, 0, 5),
           width: 100,
           elevation: 2.0,
           radius: 10.0,
-          text: "${_series[index].zhuti}",
+          text: "${_response.seriesList[index].zhuti}",
           background: Colors.lightBlue,
-          onPressed: () => goToVideoScreen(context, _series[index]),
+          onPressed: () => goToVideoScreen(context, _response, _response.seriesList[index]),
         );
       });
 }

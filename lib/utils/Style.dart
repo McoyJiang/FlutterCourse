@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class Style {
   static final baseTextStyle = const TextStyle(
+      decoration: TextDecoration.none,
       fontFamily: 'Poppins'
   );
   static final smallTextStyle = commonTextStyle.copyWith(

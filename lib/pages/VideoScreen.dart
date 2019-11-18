@@ -1,29 +1,36 @@
 import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tech/bean/MediaDetailsBean.dart';
+import 'package:flutter_tech/utils/Style.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoScreen extends StatefulWidget {
+  final MediaDetailsResponse _response;
   final MediaSeriesListItem _item;
 
-  VideoScreen(this._item);
+  VideoScreen(this._response, this._item);
 
   @override
   State<StatefulWidget> createState() {
     return _VideoScreenState();
   }
-
 }
 
-class _VideoScreenState extends State<VideoScreen> with AutomaticKeepAliveClientMixin {
+class _VideoScreenState extends State<VideoScreen>
+    with AutomaticKeepAliveClientMixin {
+  ChewieController chewieController;
 
-  final chewieController = ChewieController(
-    videoPlayerController: VideoPlayerController.network(
-        'http://okxzy.xzokzyzy.com/20191103/8912_19507cae/%E6%88%91%E7%9A%84%E4%BA%8B%E8%AF%B4%E6%9D%A5%E8%AF%9D%E9%95%BF04.mp4'),
-    aspectRatio: 3 / 2,
-    autoPlay: true,
-    looping: false,
-  );
+  @override
+  void initState() {
+    super.initState();
+    chewieController = ChewieController(
+      videoPlayerController:
+          VideoPlayerController.network(widget._item.downloadUrl),
+      aspectRatio: 3 / 2,
+      autoPlay: true,
+      looping: false,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,14 +39,24 @@ class _VideoScreenState extends State<VideoScreen> with AutomaticKeepAliveClient
       controller: chewieController,
     );
 
-    return new Column(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: <Widget>[
-        new Container(height: 30,),
-        playerWidget,
-        Text('jianjie'),
-      ],
+    return new Scaffold(
+      body: new Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          new Container(height: 30,),
+          playerWidget,
+          new Padding(
+            padding: EdgeInsets.all(20),
+            child: Text(
+              widget._response.zhuyan,
+              //style: Style.smallTextStyle.copyWith(fontSize: 15),
+            ),
+          ),
+
+        ],
+      ),
     );
   }
 
@@ -51,5 +68,4 @@ class _VideoScreenState extends State<VideoScreen> with AutomaticKeepAliveClient
 
   @override
   bool get wantKeepAlive => true;
-
 }
