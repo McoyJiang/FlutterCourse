@@ -8,6 +8,8 @@ MERGED from /Users/danny.jiang/Downloads/from_github/FlutterCourse/android/app/s
 MERGED from [com.android.support:support-v4:28.0.0] /Users/danny.jiang/.gradle/caches/transforms-2/files-2.1/0e0709e0f7ccba404ad43d798bf2a49b/support-v4-28.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [:video_player] /Users/danny.jiang/Downloads/from_github/FlutterCourse/build/video_player/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:screen] /Users/danny.jiang/Downloads/from_github/FlutterCourse/build/screen/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:sqflite] /Users/danny.jiang/Downloads/from_github/FlutterCourse/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:path_provider] /Users/danny.jiang/Downloads/from_github/FlutterCourse/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [com.android.support:support-media-compat:28.0.0] /Users/danny.jiang/.gradle/caches/transforms-2/files-2.1/cd822a4e2d66297caacd19532ab7c81b/support-media-compat-28.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:28.0.0] /Users/danny.jiang/.gradle/caches/transforms-2/files-2.1/011702268de36daaebef734b1533488d/support-fragment-28.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-ui:28.0.0] /Users/danny.jiang/.gradle/caches/transforms-2/files-2.1/9783120fb7da18c4633ac4b4b7c79a4c/support-core-ui-28.0.0/AndroidManifest.xml:17:1-22:12
@@ -113,6 +115,10 @@ MERGED from [:video_player] /Users/danny.jiang/Downloads/from_github/FlutterCour
 MERGED from [:video_player] /Users/danny.jiang/Downloads/from_github/FlutterCourse/build/video_player/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:screen] /Users/danny.jiang/Downloads/from_github/FlutterCourse/build/screen/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:screen] /Users/danny.jiang/Downloads/from_github/FlutterCourse/build/screen/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:sqflite] /Users/danny.jiang/Downloads/from_github/FlutterCourse/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:sqflite] /Users/danny.jiang/Downloads/from_github/FlutterCourse/build/sqflite/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] /Users/danny.jiang/Downloads/from_github/FlutterCourse/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] /Users/danny.jiang/Downloads/from_github/FlutterCourse/build/path_provider/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [com.android.support:support-media-compat:28.0.0] /Users/danny.jiang/.gradle/caches/transforms-2/files-2.1/cd822a4e2d66297caacd19532ab7c81b/support-media-compat-28.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-media-compat:28.0.0] /Users/danny.jiang/.gradle/caches/transforms-2/files-2.1/cd822a4e2d66297caacd19532ab7c81b/support-media-compat-28.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:28.0.0] /Users/danny.jiang/.gradle/caches/transforms-2/files-2.1/011702268de36daaebef734b1533488d/support-fragment-28.0.0/AndroidManifest.xml:20:5-44

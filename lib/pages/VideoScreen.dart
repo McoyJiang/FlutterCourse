@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tech/bean/MediaDetailsBean.dart';
@@ -54,7 +55,8 @@ class _VideoScreenState extends State<VideoScreen>
               //style: Style.smallTextStyle.copyWith(fontSize: 15),
             ),
           ),
-
+          new Container(height: 30,),
+          Image(image: CachedNetworkImageProvider("http://via.placeholder.com/350x150")),
         ],
       ),
     );
