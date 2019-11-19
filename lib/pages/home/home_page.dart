@@ -1,5 +1,6 @@
 import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_tech/widgets/basic_widget.dart';
 import 'package:flutter_tech/pages/home/home_hj_page.dart';
 import 'package:flutter_tech/pages/home/home_mj_page.dart';
@@ -40,7 +41,10 @@ class _home_page_state extends State<home_page>
                   ),
                 ),
               ),
-              bottom: MyDivider(height: 10.0, color: Colors.white,),
+              bottom: MyDivider(
+                height: 10.0,
+                color: Colors.white,
+              ),
               backgroundColor: Colors.lightBlueAccent,
             ),
             body: TabBarView(
@@ -57,26 +61,34 @@ class _home_page_state extends State<home_page>
   }
 
   getTabBar() {
-    return new TabBar(
-      indicatorSize: TabBarIndicatorSize.tab,
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 80),
+      child: new TabBar(
+        labelStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        unselectedLabelStyle: TextStyle(fontSize: 14),
+//        indicator: UnderlineTabIndicator(),
+        indicatorSize: TabBarIndicatorSize.tab,
       indicator: new BubbleTabIndicator(
         indicatorHeight: 30.0,
         indicatorColor: Colors.white,
-        padding: EdgeInsets.fromLTRB(-20, 0, -20, 0),
-        insets: EdgeInsets.fromLTRB(-20, 0, -20, 0),
+        padding: EdgeInsets.fromLTRB(-5, 0, -5, 0),
+        insets: EdgeInsets.fromLTRB(-10, 0, -10, 0),
         tabBarIndicatorSize: TabBarIndicatorSize.label,
       ),
-      tabs: [
-        Tab(
-            child: Text('日剧',
-                style: new TextStyle(color: Colors.blueAccent, fontSize: 20))),
-        Tab(
-            child: Text('美剧',
-                style: new TextStyle(color: Colors.blueAccent, fontSize: 20))),
-        Tab(
-            child: Text('韩剧',
-                style: new TextStyle(color: Colors.blueAccent, fontSize: 20)))
-      ],
+        tabs: [
+          Tab(
+              child: Text('日剧',
+                  style:
+                      new TextStyle(color: Colors.blueAccent, fontSize: 20))),
+          Tab(
+              child: Text('美剧',
+                  style:
+                      new TextStyle(color: Colors.blueAccent, fontSize: 20))),
+          Tab(
+              child: Text('韩剧',
+                  style: new TextStyle(color: Colors.blueAccent, fontSize: 20)))
+        ],
+      ),
     );
   }
 
