@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tech/bean/HomPageBean.dart';
 import 'package:flutter_tech/bean/MediaDetailsBean.dart';
 import 'package:flutter_tech/bloc/RjDetailBloc.dart';
+import 'package:flutter_tech/persistence/DatabaseClient.dart';
 import 'package:flutter_tech/utils/Style.dart';
 import 'package:flutter_tech/widgets/FavoriteIcon.dart';
 import 'package:flutter_tech/widgets/HeroBanner.dart';
@@ -20,10 +21,17 @@ class RjDetailPage extends StatefulWidget {
 }
 
 class _RjDetailPageState extends State<RjDetailPage> with AutomaticKeepAliveClientMixin {
+  DatabaseClient db;
   @override
   void initState() {
     super.initState();
+    initDB();
     rj_detail_bloc.getRJDetails(widget._entity.id);
+  }
+
+  void initDB() async {
+    db = new DatabaseClient();
+    await db.create();
   }
 
   @override
@@ -66,14 +74,6 @@ class _RjDetailPageState extends State<RjDetailPage> with AutomaticKeepAliveClie
   }
 
   Widget _buildUserWidget(MediaDetailsResponse data) {
-    return getDetailsWidget(data);
-  }
-
-  @override
-  bool get wantKeepAlive => true;
-
-  @override
-  Widget getDetailsWidget(MediaDetailsResponse data) {
     return Scaffold(
         backgroundColor: Colors.grey,
         body: ListView(
@@ -86,12 +86,16 @@ class _RjDetailPageState extends State<RjDetailPage> with AutomaticKeepAliveClie
         ));
   }
 
+  @override
+  bool get wantKeepAlive => true;
+
   Widget _buildPlays(MediaDetailsResponse data) {
     return new PlayButton(data);
   }
 
   void _handleTapboxChanged(bool newValue) {
     print('newValue is $newValue');
+    db.insertHomeListEntity(widget._entity);
   }
 
   Widget _buildDetailBanner(MediaDetailsResponse data) {

@@ -11,6 +11,10 @@ class HomeListEntity {
         title = json['title'],
         zhuti = json['zhuti'],
         img = json['img'];
+
+  Map<String, dynamic> toMap() {
+    return {'tv_id': id, 'title': title, 'zhuti': zhuti, 'img': img};
+  }
 }
 
 class HomePageBeanResponse {
