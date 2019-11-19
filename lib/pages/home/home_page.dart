@@ -21,20 +21,20 @@ class _home_page_state extends State<home_page>
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        backgroundColor: Colors.white10,
+        backgroundColor: Colors.red,
         body: DefaultTabController(
           length: 3,
           child: Scaffold(
             appBar: AppBar(
               flexibleSpace: SafeArea(
                 child: Scaffold(
-                  backgroundColor: Colors.lightBlueAccent,
+                  backgroundColor: Colors.white,
                   body: Column(
                     children: <Widget>[
                       Container(
                         height: 10,
                         alignment: Alignment.center,
-                        color: Colors.lightBlueAccent,
+                        color: Colors.white,
                       ),
                       getTabBar(),
                     ],
@@ -45,7 +45,6 @@ class _home_page_state extends State<home_page>
                 height: 10.0,
                 color: Colors.white,
               ),
-              backgroundColor: Colors.lightBlueAccent,
             ),
             body: TabBarView(
               children: [
@@ -70,7 +69,7 @@ class _home_page_state extends State<home_page>
         indicatorSize: TabBarIndicatorSize.tab,
       indicator: new BubbleTabIndicator(
         indicatorHeight: 30.0,
-        indicatorColor: Colors.white,
+        indicatorColor: Color(0XFFe7f0f1),
         padding: EdgeInsets.fromLTRB(-5, 0, -5, 0),
         insets: EdgeInsets.fromLTRB(-10, 0, -10, 0),
         tabBarIndicatorSize: TabBarIndicatorSize.label,
