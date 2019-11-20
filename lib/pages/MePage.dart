@@ -14,7 +14,7 @@ class MePage extends StatefulWidget {
 }
 
 class MePageState extends State<MePage> {
-  List<HomeListEntity> entityList;
+  List<HomeListEntity> entityList = new List();
   @override
   void initState() {
     super.initState();
