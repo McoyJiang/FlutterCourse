@@ -1,4 +1,5 @@
-# FlutterCourse
+# Project Construction
+##### Bloc + Stream + Dio + Sqflite + Clean_Code(reporitory&data source)
 
 ## Home Page
 using AppBar + BottomNavigationBar
