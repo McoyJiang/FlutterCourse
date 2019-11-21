@@ -25,3 +25,12 @@ after tap favorite in Detail Page, we can see all favorite lists in MePage
         <img src="https://github.com/McoyJiang/FlutterCourse/blob/master/images/favorite.gif" alt="IMUI" width=300/>
     </a>
 </p>
+
+## Video Play Page
+after tap any series in detail page, the Video Page will be push into widget trees, using Video Player playing TV you selected
+<br>
+<p align="center">
+    <a target="_blank">
+        <img src="https://github.com/McoyJiang/FlutterCourse/blob/master/images/video.gif" alt="IMUI" width=600/>
+    </a>
+</p>
